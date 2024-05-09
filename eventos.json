@@ -5,6 +5,12 @@
             "locacion": "Parque",
             "dia": 5,
             "realizado": true
+        },
+        {
+            "nombre": "as",
+            "locacion": "as",
+            "dia": 4,
+            "realizado": true
         }
     ],
     "participantes": [

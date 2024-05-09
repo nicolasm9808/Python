@@ -3,7 +3,6 @@ def registrar_evento(datos):
     evento={}
     evento["nombre"]=input("Ingrese el nombre del evento: ")
     evento["locacion"]=input("Ingrese la locación del evento: ")
-    evento["realizado"]=False
     try:
         dia=int(input("Ingrese el día en que se realizará el evento: "))
     except Exception:
@@ -13,8 +12,9 @@ def registrar_evento(datos):
     else:
         print("Día invalido, se asignará el día 1")
         evento["dia"] = 1
-        
+    evento["realizado"]=False   
     datos["eventos"].append(evento)
+
     print("Eventoregistrado con éxito!")
     return datos
 
@@ -52,3 +52,24 @@ def modificar_evento(datos):
                 return datos
     print("No existe el evento")
     return datos
+
+def marcar_evento_finalizado(datos):
+    datos = dict(datos)
+    evento = input("Ingrese el nombre del evento finalizado: ")
+    for i in range(len(datos["eventos"])):
+        if datos["eventos"][i]["nombre"] == evento:
+            if datos["eventos"][i]["realizado"] == True:
+                print("El evento ya había finalizado")
+                return datos
+            else:
+                datos["eventos"][i]["realizado"] = True
+                print("Evento marcado como finalizado!!")
+                return datos
+    print("Evento no encontrado")
+    return datos
+
+def eventos_mes(datos):
+    datos = dict(datos)
+    print("Eventos del mes: ")
+    for i in range(len(datos["eventos"])):
+        print(datos["eventos"][i])
