@@ -33,7 +33,7 @@ def eliminar_participante(datos):
                 print("Participante eliminado!")
                 return datos
             else:
-                print("Ya perdió, y pagó!!")
+                print("Ya perdió, ya pagó!!")
                 return datos
     print("Participante no existe")
     return datos

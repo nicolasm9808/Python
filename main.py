@@ -13,13 +13,14 @@ Para participar los empleados deben cancelar un aporte de 50.000 COP. Por lo tan
 Aspectos a tener en cuenta: 
 -La estructura a utilizar es libre, solo se pide que sea ordenada y coherente. 
 -Todo debe ser dentro de un menú que se repite para no perder la información y al presionar la opción de salida se debe pedir confirmación de la misma. 
--Se deben manejar la excepciones
+-Se deben manejar las excepciones
 '''
 
 #imports
 from datos import *
 from menu import *
 from participantes import *
+from eventos import *
 
 #Constants
 RUTA_BASE_DE_DATOS = "eventos.json"
@@ -36,9 +37,9 @@ while True:
     elif opc == 3:
         datos = pagar_participante(datos)
     elif opc == 4:
-        print("opcion 4")
+        datos = registrar_evento(datos)
     elif opc == 5:
-        print("opcion 5")
+        datos = modificar_evento(datos)
     elif opc == 6:
         print("opcion 6")
     elif opc == 7:
